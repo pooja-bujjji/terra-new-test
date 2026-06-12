@@ -1,0 +1,12 @@
+versions.tf: terraform version, provider plugin version
+provider.tf: aws access key, secret key, region
+main.tf: resource block, local block
+variable.tf: declaration of input variable required by my code
+terraform.tfvars: assignment of values to variables.tf
+outputs.tf: create any resource and get its any of the output eg: create ec2 and get public ip
+
+
+
+
+check how to get list output i.e., security groups ----> not a single value in output block
+pemkey: tls_private_key; key_pair(public-refer it in ec2; pvt- download and save it in local_file give path to save)

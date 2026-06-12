@@ -40,3 +40,6 @@ terraform.rc
 *.tfvars.json
 *.tfplan
 *.tfstate
+
+config/
+my_reference.txt # This file is used as a reference for the .gitignore file. It contains examples of files and directories that should be ignored by Git when using Terraform. The .gitignore file is essential for keeping sensitive information out of version control and ensuring that only relevant files are tracked.
