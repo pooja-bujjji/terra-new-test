@@ -23,6 +23,35 @@ resource "local_file" "private_key" {
   filename = var.pem_file_path
 }
 
+
+
+resource "aws_s3_bucket" "myy_buc" {
+  bucket = var.s3_bucket_name
+}
+
+# resource "aws_s3_bucket_acl" "my_acl" {
+#   bucket = aws_s3_bucket.myy_buc.id
+#   acl    = "private"
+# }
+
+resource "aws_s3_bucket_versioning" "versioning_my-bucc" {
+  bucket = aws_s3_bucket.myy_buc.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "MYY-BUC-SSE" {
+  bucket = aws_s3_bucket.myy_buc.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
+
 resource "aws_security_group" "my-sg" {
   name        = "my_security_group"
   description = "Security group for my EC2 instance"

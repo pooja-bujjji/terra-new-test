@@ -21,3 +21,8 @@ variable "pem_file_path" {
   # default     = "C:/Users/DELL/Downloads/dec-new.pem"
   type = string
 }
+
+variable "s3_bucket_name" {
+  type        = string
+  description = "s3333"
+}
